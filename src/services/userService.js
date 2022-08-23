@@ -9,13 +9,11 @@ const userModel = {
 module.exports = {
     async login (username, password) {
         let auth = {
-            status: false,
             token: false
         }
 
-        if (username == userModel.username) {
-            if (password == userModel.password) {
-                auth.status = "SUCCESS";
+        if (username === userModel.username) {
+            if (password === userModel.password) {
                 auth.token = await generateToken(userModel.id, userModel.username, userModel.password)
             }
             else {
@@ -26,7 +24,7 @@ module.exports = {
             return -1;
         }
 
-        return auth
+        return auth;
     },
 
     async read () {
