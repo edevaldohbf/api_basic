@@ -1,16 +1,14 @@
-// const settings = require('./settings/settings')
-const Ip = require('ip');
 const express = require('express');
+const settings = require('./settings/settings')
+const routes = require('./settings/routes')
+
 const app = express();
-const routes = require('./routes');
+const host = settings.host;
+const port = settings.port;
 
-
-const protocol = process.env.PROTOCOL || 'http';
-const ip = Ip.address();
-const port = process.env.PORT || 5000;
-
+app.use(express.json());
 app.use(routes);
 
-app.listen(port, () => console.log(`
-    Server started in http://localhost:${port} or ${protocol}://${ip}:${port}
+app.listen(port, host, () => console.log(`
+    Server running at ${host}:${port}
 `));

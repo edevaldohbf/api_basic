@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "env $(cat .env) nodemon src/index.js",
-    "start": "env $(cat .env) nodemon src/index.js"
+    "start": "env $(cat .env) node src/index.js"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "3.3.0",
     "nodemon": "^2.0.19"
   },
   "dependencies": {
@@ -17,7 +18,13 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "ip": "^1.1.8",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
