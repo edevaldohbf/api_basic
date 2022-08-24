@@ -17,7 +17,6 @@ module.exports = {
         }
 
         let auth = await userService.login(username, password);
-        console.log(auth);
 
         if (auth == -1) {
             responseModel.status = 'ERROR';
