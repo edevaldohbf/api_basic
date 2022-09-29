@@ -8,7 +8,9 @@ const host = settings.host;
 const port = settings.port;
 
 app.use(cors());
+
 app.use(express.json());
+
 app.use(routes);
 
 app.listen(port, host, () => console.log(`
